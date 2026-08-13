@@ -1,6 +1,6 @@
 #include "mm/mm.h"
 
-#define CONFIG_GRUB 0
+#define CONFIG_GRUB
 
 #ifdef CONFIG_GRUB
 // multiboot section for GRUB
@@ -22,4 +22,8 @@ void egx(void) {
 	node_t nodez;
 	nodez.start = 0x20000000;
 	nodez.end = 0x420000000;
+
+	while(1) {
+		asm volatile ("hlt");
+	}
 }
