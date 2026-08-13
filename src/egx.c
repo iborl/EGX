@@ -1,8 +1,7 @@
+#include "config/boot.h"
 #include "mm/mm.h"
 
-#define CONFIG_GRUB
-
-#ifdef CONFIG_GRUB
+#if defined(CONFIG_BOOT_GRUB)
 // multiboot section for GRUB
 // GRUB needs multiboot headers
 __attribute__((section(".multiboot"))) 
@@ -15,7 +14,7 @@ const unsigned int header[] = {
 };
 
 #else
-#warn "Compiling kernel without multiboot headers"
+#warn "Compiling kernel without GRUB multiboot headers"
 #endif
 
 void egx(void) {
