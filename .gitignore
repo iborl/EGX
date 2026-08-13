@@ -1,4 +1,4 @@
-egx.map
-egx.elf
-egx.o
+*.map
+*.elf
+*.o
 *.iso
