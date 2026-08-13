@@ -1,7 +1,7 @@
 #ifndef MM_H
 #define MM_H
 
-#include "def.h"
+#include "../def.h"
 
 // Memory will be structured in banks, with each bank relating to a node. Banks are specified using struct node and it's typedef node_t.
 

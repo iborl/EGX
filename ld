@@ -8,7 +8,13 @@ MEMORY
 
 SECTIONS
 {
-	.text 0x00100000 : {
+	. = 0x00100000;
+
+	.multiboot ALIGN(8) :
+	{
+		KEEP(*(.multiboot))
+	}
+	.text ALIGN(16) : {
 		*(.text*)
 	} 
 
