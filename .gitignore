@@ -2,3 +2,5 @@
 *.elf
 *.o
 *.iso
+*.sh
+objs/

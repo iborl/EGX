@@ -1,11 +1,5 @@
 ENTRY(egx)
 
-MEMORY
-{
-	ROM (rx) : ORIGIN = 0, LENGTH = 256k
-	RAM (wx) : org = 0x00100000, len = 1M
-}
-
 SECTIONS
 {
 	. = 0x00100000;
@@ -18,11 +12,11 @@ SECTIONS
 		*(.text*)
 	} 
 
-	.data : {
+	.data ALIGN(16) : {
 		*(.data*)
 	}
 
-	.rodata : {
+	.rodata ALIGN(16) : {
 		*(.rodata*)
 	}
 }
