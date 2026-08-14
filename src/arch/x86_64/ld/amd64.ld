@@ -1,4 +1,5 @@
-ENTRY(egx)
+/* Specify entry point to be _start, which is in the bootstrapper */
+ENTRY(_start)
 
 SECTIONS
 {
@@ -11,6 +12,10 @@ SECTIONS
 	.text ALIGN(16) : {
 		*(.text*)
 	} 
+
+	.bss ALIGN(16) : {
+		*(.bss*)
+	}
 
 	.data ALIGN(16) : {
 		*(.data*)
